@@ -143,24 +143,13 @@ library NFTMetadataRenderer {
         bytes memory json
     ) internal pure returns (string memory) {
         return
-            string(
-                abi.encodePacked(
-                    "data:application/json;base64,",
-                    Base64.encode(json)
-                )
-            );
+            string.concat("data:application/json;base64,", Base64.encode(json));
     }
 
     /// @notice Encode the svg bytes into base64 data uri format.
     /// @param svg The svg bytes to encode.
     function encodeSVG(bytes memory svg) internal pure returns (string memory) {
-        return
-            string(
-                abi.encodePacked(
-                    "data:image/svg+xml;base64,",
-                    Base64.encode(svg)
-                )
-            );
+        return string.concat("data:image/svg+xml;base64,", Base64.encode(svg));
     }
 
     /// @notice Generate key/value data for metadata.
@@ -171,25 +160,23 @@ library NFTMetadataRenderer {
     ) internal pure returns (string memory) {
         if (fields.length == 0) return "";
 
-        string memory tokenMedia = string(
-            abi.encodePacked('"', fields[0].name, '": "', fields[0].value, '"')
+        string memory tokenMedia = string.concat(
+            '"',
+            fields[0].name,
+            '": "',
+            fields[0].value,
+            '"'
         );
 
-        for (uint256 i = 1; i < fields.length; ) {
-            tokenMedia = string(
-                abi.encodePacked(
-                    '"',
-                    fields[i].name,
-                    '": "',
-                    fields[i].value,
-                    '",',
-                    tokenMedia
-                )
+        for (uint256 i = 1; i < fields.length; i++) {
+            tokenMedia = string.concat(
+                '"',
+                fields[i].name,
+                '": "',
+                fields[i].value,
+                '",',
+                tokenMedia
             );
-
-            unchecked {
-                i++;
-            }
         }
         return tokenMedia;
     }
