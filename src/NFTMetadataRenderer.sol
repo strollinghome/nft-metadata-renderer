@@ -99,7 +99,7 @@ library NFTMetadataRenderer {
                 " ",
                 LibString.toString(tokenId),
                 tokenNumber,
-                '", "',
+                '","',
                 'description": "',
                 description,
                 '"',
