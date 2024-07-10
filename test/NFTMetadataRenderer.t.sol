@@ -1,3 +1,5 @@
+pragma solidity ^0.8.25;
+
 import {Test, console} from "forge-std/Test.sol";
 
 import "../src/NFTMetadataRenderer.sol";

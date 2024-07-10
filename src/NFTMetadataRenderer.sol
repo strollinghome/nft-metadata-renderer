@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.25;
+pragma solidity ^0.8.25;
 
 import "solady/utils/Base64.sol";
 import "solady/utils/LibString.sol";
