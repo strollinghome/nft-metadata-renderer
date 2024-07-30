@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-import "solady/utils/Base64.sol";
-import "solady/utils/LibString.sol";
+import "solady/src/utils/Base64.sol";
+import "solady/src/utils/LibString.sol";
 
 /// @notice Library for rendering metadata for NFTs.
 /// @author indreams.eth
